@@ -7,4 +7,5 @@ data/jsonOA/
 result/
 error.log
 *-rdfizer.ini
-.DS_Store
+*.DS_Store
+.ipynb_checkpoints/
