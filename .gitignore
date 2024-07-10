@@ -1,4 +1,5 @@
 mysc/
+mappings/data/
 data/*.csv
 data/*.json
 data/*.numbers
@@ -8,4 +9,4 @@ result/
 error.log
 *-rdfizer.ini
 *.DS_Store
-.ipynb_checkpoints/
+*.ipynb_checkpoints/
