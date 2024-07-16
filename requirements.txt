@@ -1,0 +1,10 @@
+jsonpath-ng==1.6.1
+mapeathor==1.7.5
+morph_kgc==2.8.0
+matplotlib==3.9.1
+numpy==2.0.0
+pandas==2.2.2
+requests==2.32.3
+seaborn==0.13.2
+SPARQLWrapper==2.0.0
+urllib3==2.2.2
