@@ -83,7 +83,7 @@ mappings:
       - [solar:hasCondition, https://w3id.org/solar/i/Condition/Temperature/$(ID)~iri]
       - [solar:hasCondition, https://w3id.org/solar/i/Condition/Time/$(ID)~iri]
       - [solar:hasCondition, https://w3id.org/solar/o/core#$(Reaction_medium)Medium~iri]
-      - [solar:hasCondition, https://w3id.org/solar/o/core#$(Operation_mode)Mode~iri]
+      - [solar:hasCondition, $(Operation_mode)~iri]
       - [solar:hasCondition, https://w3id.org/solar/i/Condition/ReactorVolume/$(ID)~iri]
       - [solar:hasCondition, https://w3id.org/solar/i/Condition/ReactorResidenceTime/$(ID)~iri]
  
@@ -164,6 +164,14 @@ mappings:
       - [rdfs:label, $(co_catalyst_3), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
       - [qudt:floatPercentage, $(percent_cc_3), xsd:float]
+      - p: solar:hasChemical
+        o:
+          - mapping: CHEMICAL
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(Catalyst)]
+                - [str2, $(Chemicals)]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
@@ -294,8 +302,8 @@ mappings:
     subjects: https://w3id.org/solar/i/Condition/LightSource/$(ID)
     po:
       - [a, obi:0400065]
-      - [rdf:type, https://w3id.org/solar/o/core#$(Light_source)LightSource~iri]
-      - [solar:hasLamp, https://w3id.org/solar/o/core#$(Lamp)Lamp~iri]
+      - [rdf:type, $(Light_source)~iri]
+      - [solar:hasLamp, $(Lamp)~iri]
       - [solar:hasWavelength, https://w3id.org/solar/o/core#$(Wavelength_nm)WL~iri]
       - [solar:hasIlluminatedArea, https://w3id.org/solar/i/IlluminatedArea/$(ID)~iri]
       - [solar:hasPower, https://w3id.org/solar/i/Power/$(ID)~iri]
