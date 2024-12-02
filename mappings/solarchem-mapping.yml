@@ -21,7 +21,7 @@ prefixes:
 mappings:
   ARTICLE:
     sources:
-      - [../mappings/data/papersOA.json~jsonpath, '$[*]']
+      - [../data/processed/papersOA.json~jsonpath, '$[*]']
     subjects: https://w3id.org/solar/i/Article/$(solar_id)
     po:
       - [a, schema:ScholarlyArticle]
@@ -45,7 +45,7 @@ mappings:
  
   AUTHOR:
     sources:
-      - [../mappings/data/papersOA.json~jsonpath, '$[*].authorships[*]']
+      - [../data/processed/papersOA.json~jsonpath, '$[*].authorships[*]']
     subjects: https://w3id.org/solar/i/Author/$(author.orcid)
     po:
       - [a, schema:Person]
@@ -54,7 +54,7 @@ mappings:
  
   AFFILIATION:
     sources:
-      - [../mappings/data/papersOA.json~jsonpath, '$[*].authorships[*]']
+      - [../data/processed/papersOA.json~jsonpath, '$[*].authorships[*]']
     subjects: https://w3id.org/solar/i/Affiliation/$(institutions.id)
     po:
       - [a, schema:Organization]
@@ -63,7 +63,7 @@ mappings:
  
   EXPEXEC:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/ExpExec/$(ID)
     po:
       - [a, solar:ExperimentExecution]
@@ -89,7 +89,7 @@ mappings:
  
   CATALYST:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)
     po:
       - [a, solar:Input]
@@ -111,7 +111,7 @@ mappings:
  
   BANDGAP:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)
     po:
       - [a, solar:BandGap]
@@ -120,7 +120,7 @@ mappings:
  
   SURFACEAREA:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)
     po:
       - [a, solar:SurfaceArea]
@@ -129,7 +129,7 @@ mappings:
  
   CO-CATALYST:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(Co_catalyst)
     po:
       - [a, solar:Input]
@@ -147,7 +147,7 @@ mappings:
  
   CO-CATALYST2:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_2)
     po:
       - [a, solar:Input]
@@ -157,7 +157,7 @@ mappings:
  
   CO-CATALYST3:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_3)
     po:
       - [a, solar:Input]
@@ -183,7 +183,7 @@ mappings:
  
   SUPPORT:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Input/Support/$(ID)-$(Support)
     po:
       - [a, solar:Input]
@@ -201,7 +201,7 @@ mappings:
  
   DOPANT:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)
     po:
       - [a, solar:Input]
@@ -219,7 +219,7 @@ mappings:
  
   DYE:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)
     po:
       - [a, solar:Input]
@@ -237,7 +237,7 @@ mappings:
  
   REDUCTANT:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Input/Reductant/$(ID)-$(Reductant)
     po:
       - [a, solar:Input]
@@ -255,7 +255,7 @@ mappings:
  
   PH:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Condition/pH/$(ID)
     po:
       - [a, solar:pHCondition]
@@ -264,14 +264,14 @@ mappings:
  
   REACTOR:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Condition/Reactor/$(ID)
     po:
       - [a, solar:ReactorCondition]
  
   PRESSURE:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Condition/Pressure/$(ID)
     po:
       - [a, solar:PressureCondition]
@@ -280,7 +280,7 @@ mappings:
  
   TEMPERATURE:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Condition/Temperature/$(ID)
     po:
       - [a, solar:TemperatureCondition]
@@ -289,7 +289,7 @@ mappings:
  
   TIME:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Condition/Time/$(ID)
     po:
       - [a, solar:TimeCondition]
@@ -298,7 +298,7 @@ mappings:
  
   LIGHT:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Condition/LightSource/$(ID)
     po:
       - [a, obi:0400065]
@@ -311,7 +311,7 @@ mappings:
  
   POWER:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Power/$(ID)
     po:
       - [a, solar:Power]
@@ -320,7 +320,7 @@ mappings:
  
   IRRADIANCE:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Irradiance/$(ID)
     po:
       - [a, solar:Irradiance]
@@ -329,7 +329,7 @@ mappings:
  
   ILLUMAREA:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/IlluminatedArea/$(ID)
     po:
       - [a, solar:IlluminatedArea]
@@ -338,7 +338,7 @@ mappings:
  
   REACTORVOL:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Condition/ReactorVolume/$(ID)
     po:
       - [a, solar:ReactorVolumeCondition]
@@ -347,7 +347,7 @@ mappings:
  
   REACTORRESTIME:
     sources:
-      - [../mappings/data/catalystsdata.csv~csv]
+      - [../data/processed/catalystsdata.csv~csv]
     subjects: https://w3id.org/solar/i/Condition/ReactorResidenceTime/$(ID)
     po:
       - [a, solar:ResidenceTimeCondition]
@@ -356,7 +356,7 @@ mappings:
  
   CHEMICAL:
     sources:
-      - [../mappings/data/chemicals.csv~csv]
+      - [../data/processed/chemicals.csv~csv]
     subjects: $(uri)
     po:
       - [rdfs:label, $(Chemicals), xsd:string]

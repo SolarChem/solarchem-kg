@@ -120,12 +120,11 @@ def cleaning_catalystdata():
 	"""
 
 	print('['+str(datetime.now().time())[0:8]+'] Processing catalystsdata.csv')
-	exp_df = pd.read_csv("/home/solarchem/data/raw/raw-catalystsdata.csv")
+	exp_df = pd.read_csv("/home/solarchem/solarchem-kg/data/raw/raw-catalystsdata.csv")
 
 	print('['+str(datetime.now().time())[0:8]+'] Fixing null values')
 	# Removing negative numbers and values that serve as null
 	exp_df.replace([-1,"-1", -1.0, 0.0, 9999.99], '', inplace=True)
-	exp_df.head(5)
 
 	# Cleaning false null values 
 	exp_df.Masscat_g = exp_df.Masscat_g.apply(clean_numeric_columns)
@@ -139,18 +138,36 @@ def cleaning_catalystdata():
 	print('['+str(datetime.now().time())[0:8]+'] Aligning values with terms in the ontology')
 	# Aligning values with ontology hierarchies
 	# Reactor types
-	exp_df['Reactor_type'] = exp_df['Reactor_type'].replace((' ', 'Batch'), '')
-	
+	exp_df['Reactor_type'] = exp_df['Reactor_type'].replace(('\s', 'Batch'), '', regex=True)
+
 	# Light sources
-	exp_df['Light_source'] = exp_df['Light_source'].replace(' ', '')
+	exp_df['Light_source'] = exp_df['Light_source'].replace('\s', '', regex=True)
+	exp_df['Light_source'] = exp_df['Light_source'].replace({"UV":"https://purl.obolibrary.org/obo/OBI_0002900", 
+                              "Visible":"https://purl.obolibrary.org/obo/OBI_0002901", 
+                              "Vis":"https://purl.obolibrary.org/obo/OBI_0002901", 
+                              "Solar":"https://purl.obolibrary.org/obo/OBI_0002902",  
+                              "UV-Vis":"https://w3id.org/solar/o/core#UltravioletVisibleLightSource", 
+                              "SolarSimulator":"https://w3id.org/solar/o/core#SolarSimulatorLightSource", 
+                              "Monochromatic":"https://w3id.org/solar/o/core#MonochromaticLightSource"})
 
 	# Lamps
-	exp_df['Lamp'] = exp_df['Lamp'].replace({"Mercury(Hg)":"Mercury", 
-                              "Xenon(Xe)":"Xenon", 
-                              "Solar":"SolarSimulator",  
+	exp_df['Lamp'] = exp_df['Lamp'].replace({"Mercury(Hg)":"https://w3id.org/solar/o/core#MercuryLamp", 
+                              "Xenon(Xe)":"https://w3id.org/nfdi4cat/voc4cat_0000168", 
+                              "Solar":"https://w3id.org/solar/o/core#SolarSimulatorLamp",  
                               "Not spedified":"", 
-                              "Mercury-Xenon(Hg-Xe)":"Mercury-Xenon", 
-                              "Tungsten(W)":"Tungsten"})
+                              "Mercury-Xenon(Hg-Xe)":"https://w3id.org/nfdi4cat/voc4cat_0000169", 
+                              "Tungsten(W)":"https://w3id.org/solar/o/core#TungstenLamp", 
+                              "Fluorescent":"https://w3id.org/solar/o/core#FluorescentLamp", 
+                              "Halogen":"https://w3id.org/solar/o/core#HalogenLamp", 
+                              "Tungsten-Halide":"https://w3id.org/solar/o/core#Tungsten-HalideLamp", 
+                              "LED":"https://w3id.org/solar/o/core#LEDLamp", 
+                              "Other":"https://w3id.org/solar/o/core#OtherLamp"})
+
+    # Operation modes
+	exp_df['Operation_mode'] = exp_df['Operation_mode'].replace({ 
+                              "Batch":"https://w3id.org/nfdi4cat/voc4cat_0000110",
+                              "Continuous":"https://w3id.org/nfdi4cat/voc4cat_0000109",})
+
 
 	# Wavelengths
 	exp_df.Wavelength_nm = exp_df.Wavelength_nm.apply(set_wavelengths)
@@ -169,7 +186,7 @@ def cleaning_catalystdata():
      
 	print('['+str(datetime.now().time())[0:8]+'] Saving file in ~/data/processed/catalystsdata.csv')
 	# Saving file
-	exp_df.to_csv("/home/solarchem/data/processed/catalystsdata.csv", index=False, sep=",")
+	exp_df.to_csv("/home/solarchem/solarchem-kg/data/processed/catalystsdata.csv", index=False, sep=",")
 
 def main():
 	cleaning_catalystdata()
