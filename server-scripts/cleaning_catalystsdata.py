@@ -138,10 +138,10 @@ def cleaning_catalystdata():
 	print('['+str(datetime.now().time())[0:8]+'] Aligning values with terms in the ontology')
 	# Aligning values with ontology hierarchies
 	# Reactor types
-	exp_df['Reactor_type'] = exp_df['Reactor_type'].replace(('\s', 'Batch'), '', regex=True)
-
+	exp_df['Reactor_type'] = exp_df['Reactor_type'].replace((' ', 'Batch'), '')
+	
 	# Light sources
-	exp_df['Light_source'] = exp_df['Light_source'].replace('\s', '', regex=True)
+	exp_df['Light_source'] = exp_df['Light_source'].replace(' ', '')
 	exp_df['Light_source'] = exp_df['Light_source'].replace({"UV":"https://purl.obolibrary.org/obo/OBI_0002900", 
                               "Visible":"https://purl.obolibrary.org/obo/OBI_0002901", 
                               "Vis":"https://purl.obolibrary.org/obo/OBI_0002901", 
