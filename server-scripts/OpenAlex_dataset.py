@@ -1,4 +1,4 @@
-#!/home/solarchem/scripts/.venv/kgc/bin/python
+#!/home/solarchem/solarchem-kg/server-scripts/.venv/kgc/bin/python
 
 import pandas as pd
 from datetime import datetime
@@ -14,11 +14,11 @@ def generating_OA_file():
 	print('['+str(datetime.now().time())[0:8]+'] Obtaining papers information from OpenAlex')
 
 	## opening curated file of papers
-	papers_df = pd.read_csv("/home/solarchem/solarchem-kg/data/raw/paper_references_curated.csv", sep=';')
+	papers_df = pd.read_csv("../data/raw/paper_references_curated.csv", sep=';')
 
 	headers = {'Accept': 'application/json'}
 	query ='https://api.openalex.org/works/https://doi.org/{}'
-	path = '/home/solarchem/solarchem-kg/data/raw/jsonOA/'
+	path = '../data/raw/jsonOA/'
 
 	print('['+str(datetime.now().time())[0:8]+'] Downloading JSON file for each paper')
 
@@ -45,10 +45,10 @@ def generating_OA_file():
 		with open(filename, 'r') as infile:
 			merged_json.append(json.load(infile))
 	
-	print('['+str(datetime.now().time())[0:8]+'] Saving file in ~/data/processed/papersOA.json')
+	print('['+str(datetime.now().time())[0:8]+'] Saving file in ~/solarchem-kg/data/processed/papersOA.json')
 	
 	# save file 
-	with open('/home/solarchem/solarchem-kg/data/processed/papersOA.json', 'w') as out_json:
+	with open('../data/processed/papersOA.json', 'w') as out_json:
 	    json.dump(merged_json, out_json)
 
 def main():

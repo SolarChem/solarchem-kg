@@ -1,4 +1,4 @@
-#!/home/solarchem/scripts/.venv/kgc/bin/python
+#!/home/solarchem/solarchem-kg/server-scripts/.venv/kgc/bin/python
 
 import pandas as pd
 from datetime import datetime
@@ -120,7 +120,7 @@ def cleaning_catalystdata():
 	"""
 
 	print('['+str(datetime.now().time())[0:8]+'] Processing catalystsdata.csv')
-	exp_df = pd.read_csv("/home/solarchem/solarchem-kg/data/raw/raw-catalystsdata.csv")
+	exp_df = pd.read_csv("../data/raw/raw-catalystsdata.csv")
 
 	print('['+str(datetime.now().time())[0:8]+'] Fixing null values')
 	# Removing negative numbers and values that serve as null
@@ -184,9 +184,9 @@ def cleaning_catalystdata():
 	exp_df['co_selectivity_molg'] = exp_df.apply(lambda x: selectivity( x['CO_mol_g'], x['CO_mol_g'], x['CH4_mol_g'], x['H2_mol_g'], x['CH3OH_mol_g']), axis=1)
 	exp_df['ch3oh_selectivity_molg'] = exp_df.apply(lambda x: selectivity( x['CH3OH_mol_g'], x['CO_mol_g'], x['CH4_mol_g'], x['H2_mol_g'], x['CH3OH_mol_g']), axis=1)
      
-	print('['+str(datetime.now().time())[0:8]+'] Saving file in ~/data/processed/catalystsdata.csv')
+	print('['+str(datetime.now().time())[0:8]+'] Saving file in ~/solarchem-kg/data/processed/catalystsdata.csv')
 	# Saving file
-	exp_df.to_csv("/home/solarchem/solarchem-kg/data/processed/catalystsdata.csv", index=False, sep=",")
+	exp_df.to_csv("../data/processed/catalystsdata.csv", index=False, sep=",")
 
 def main():
 	cleaning_catalystdata()
