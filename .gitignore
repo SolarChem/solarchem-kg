@@ -11,3 +11,4 @@ error.log
 *-rdfizer.ini
 *.DS_Store
 *.ipynb_checkpoints/
+*access.txt
