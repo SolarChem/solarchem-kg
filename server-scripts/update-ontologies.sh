@@ -10,7 +10,7 @@ echo [$TIME] Deleting ontology named graph
 curl -X 'DELETE' \
   'https://solarchem.linkeddata.es/repositories/solarchem/rdf-graphs/service?graph=https%3A%2F%2Fw3id.org%2Fsolar%2Fo%2F' \
   -H 'accept: */*' \
-  -H 'Authorization: GDB '$KEY
+  -H 'Authorization: Basic '$KEY
 
 for MODULE in core ec pc pec
 do
@@ -22,6 +22,6 @@ do
 	  'https://solarchem.linkeddata.es/repositories/solarchem/rdf-graphs/service?graph=https%3A%2F%2Fw3id.org%2Fsolar%2Fo%2F' \
 	  -H 'accept: */*' \
 	  -H 'Content-Type: application/rdf+xml' \
-  	  -H 'Authorization: GDB '$KEY \
+  	  -H 'Authorization: Basic '$KEY \
 	  --data-binary '@../data/ontologies/'$MODULE'.owl'
 done
