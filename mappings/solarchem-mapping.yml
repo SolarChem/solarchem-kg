@@ -115,6 +115,8 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(Co_catalyst), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
+      - [qudt:numericValue, $(Co_catalyst), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
@@ -132,6 +134,8 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(co_catalyst_2), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
+      - [qudt:numericValue, $(co_catalyst_2), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
@@ -149,6 +153,8 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(co_catalyst_3), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
+      - [qudt:numericValue, $(co_catalyst_3), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
@@ -166,6 +172,8 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(Support), xsd:string]
       - [solar:hasRole, solarpc:Support~iri]
+      - [qudt:numericValue, $(Support), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
@@ -183,6 +191,8 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(Dopant), xsd:string]
       - [solar:hasRole, solar:Dopant~iri]
+      - [qudt:numericValue, $(Dopant), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
@@ -200,6 +210,8 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(Dyes), xsd:string]
       - [solar:hasRole, solarpc:Dye~iri]
+      - [qudt:numericValue, $(Dyes), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
@@ -389,138 +401,6 @@ mappings:
       - [sosa:hasSimpleResult, $(TiO2_crystal_structure), xsd:string]
       - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
- 
-  PERC_CO-CATALYST_OBS:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Observation/$(Co_catalyst)-cocatalyst/$(ID)
-    po:
-      - [a, sosa:Observation]
-      - [rdfs:label, Observation of percentage of co-catalyst $(Co_catalyst) for experiment execution $(ID), xsd:string]
-      - [sosa:observedProperty, solar:Percentage~iri]
-      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(Co_catalyst)-cocatalyst/$(ID)~iri]
-      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(Co_catalyst)~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
- 
-  PERC_CO-CATALYST_RES:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Result/$(Co_catalyst)-cocatalyst/$(ID)
-    po:
-      - [a, sosa:Result]
-      - [rdfs:label, Result of percentage of co-catalyst $(Co_catalyst) for experiment execution $(ID), xsd:string]
-      - [qudt:numericValue, $(percent), xsd:float]
-      - [qudt:unit, unit:PERCENT~iri]
- 
-  PERC_CO-CATALYST2_OBS:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Observation/$(co_catalyst_2)-cocatalyst/$(ID)
-    po:
-      - [a, sosa:Observation]
-      - [rdfs:label, Observation of percentage of co-catalyst $(co_catalyst_2) for experiment execution $(ID), xsd:string]
-      - [sosa:observedProperty, solar:Percentage~iri]
-      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(co_catalyst_2)-cocatalyst/$(ID)~iri]
-      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_2)~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
- 
-  PERC_CO-CATALYST2_RES:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Result/$(co_catalyst_2)-cocatalyst/$(ID)
-    po:
-      - [a, sosa:Result]
-      - [rdfs:label, Result of percentage of co-catalyst $(co_catalyst_2) for experiment execution $(ID), xsd:string]
-      - [qudt:numericValue, $(percent_cc_2), xsd:float]
-      - [qudt:unit, unit:PERCENT~iri]
- 
-  PERC_CO-CATALYST3_OBS:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Observation/$(co_catalyst_3)-cocatalyst/$(ID)
-    po:
-      - [a, sosa:Observation]
-      - [rdfs:label, Observation of percentage of co-catalyst $(co_catalyst_3) for experiment execution $(ID), xsd:string]
-      - [sosa:observedProperty, solar:Percentage~iri]
-      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(co_catalyst_3)-cocatalyst/$(ID)~iri]
-      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_3)~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
- 
-  PERC_CO-CATALYST3_RES:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Result/$(co_catalyst_3)-cocatalyst/$(ID)
-    po:
-      - [a, sosa:Result]
-      - [rdfs:label, Result of percentage of co-catalyst $(co_catalyst_3) for experiment execution $(ID), xsd:string]
-      - [qudt:numericValue, $(percent_cc_3), xsd:float]
-      - [qudt:unit, unit:PERCENT~iri]
- 
-  PERC_SUPPORT_OBS:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Observation/$(Support)-support/$(ID)
-    po:
-      - [a, sosa:Observation]
-      - [rdfs:label, Observation of percentage of support $(Support) for experiment execution $(ID), xsd:string]
-      - [sosa:observedProperty, solar:Percentage~iri]
-      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(Support)-support/$(ID)~iri]
-      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Support/$(ID)-$(Support)~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
- 
-  PERC_SUPPORT_RES:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Result/$(Support)-support/$(ID)
-    po:
-      - [a, sosa:Result]
-      - [rdfs:label, Result of percentage of support $(Support) for experiment execution $(ID), xsd:string]
-      - [qudt:numericValue, $(support_percent), xsd:float]
-      - [qudt:unit, unit:PERCENT~iri]
- 
-  PERC_DOPANT_OBS:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Observation/$(Dopant)-dopant/$(ID)
-    po:
-      - [a, sosa:Observation]
-      - [rdfs:label, Observation of percentage of dopant $(Dopant) for experiment execution $(ID), xsd:string]
-      - [sosa:observedProperty, solar:Percentage~iri]
-      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(Dopant)-dopant/$(ID)~iri]
-      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
- 
-  PERC_DOPANT_RES:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Result/$(Dopant)-dopant/$(ID)
-    po:
-      - [a, sosa:Result]
-      - [rdfs:label, Result of percentage of dopant $(Dopant) for experiment execution $(ID), xsd:string]
-      - [qudt:numericValue, $(dopant_percent), xsd:float]
-      - [qudt:unit, unit:PERCENT~iri]
- 
-  PERC_DYE_OBS:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Observation/$(Dyes)-dye/$(ID)
-    po:
-      - [a, sosa:Observation]
-      - [rdfs:label, Observation of percentage of dye $(Dyes) for experiment execution $(ID), xsd:string]
-      - [sosa:observedProperty, solar:Percentage~iri]
-      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(Dyes)-dye/$(ID)~iri]
-      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
- 
-  PERC_DYE_RES:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Result/$(Dyes)-dye/$(ID)
-    po:
-      - [a, sosa:Result]
-      - [rdfs:label, Result of percentage of dye $(Dyes) for experiment execution $(ID), xsd:string]
-      - [qudt:numericValue, $(dye_percent), xsd:float]
-      - [qudt:unit, unit:PERCENT~iri]
  
   PERC_REDUCTANT_OBS:
     sources:
