@@ -17,6 +17,7 @@ prefixes:
   qudt: "http://qudt.org/2.1/schema/qudt/"
   unit: "http://qudt.org/vocab/unit/"
   obi: "http://purl.obolibrary.org/obo/OBI_"
+  sosa: "http://www.w3.org/ns/sosa/"
 
 mappings:
   ARTICLE:
@@ -97,9 +98,6 @@ mappings:
       - [solar:hasRole, solar:Catalyst~iri]
       - [qudt:numericValue, $(Masscat_g), xsd:float]
       - [qudt:unit, unit:GM~iri]
-      - [solar:crystalStructure, $(TiO2_crystal_structure), xsd:string]
-      - [solar:hasBandGap, https://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)~iri]
-      - [solar:hasSurfaceArea, https://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)~iri]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
@@ -109,24 +107,6 @@ mappings:
                 - [str1, $(Catalyst)]
                 - [str2, $(Chemicals)]
  
-  BANDGAP:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)
-    po:
-      - [a, solar:BandGap]
-      - [qudt:numericValue, $(Eg_eV), xsd:float]
-      - [qudt:unit, unit:EV~iri]
- 
-  SURFACEAREA:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)
-    po:
-      - [a, solar:SurfaceArea]
-      - [qudt:numericValue, $(BET_m2_g), xsd:float]
-      - [qudt:unit, unit:M2-PER-GM~iri]
- 
   CO-CATALYST:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
@@ -135,14 +115,13 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(Co_catalyst), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
-      - [qudt:floatPercentage, $(percent), xsd:float]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
             condition:
               function: equal
               parameters:
-                - [str1, $(Catalyst)]
+                - [str1, $(Co_catalyst)]
                 - [str2, $(Chemicals)]
  
   CO-CATALYST2:
@@ -153,7 +132,14 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(co_catalyst_2), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
-      - [qudt:floatPercentage, $(percent_cc_2), xsd:float]
+      - p: solar:hasChemical
+        o:
+          - mapping: CHEMICAL
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(co_catalyst_2)]
+                - [str2, $(Chemicals)]
  
   CO-CATALYST3:
     sources:
@@ -163,22 +149,13 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(co_catalyst_3), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
-      - [qudt:floatPercentage, $(percent_cc_3), xsd:float]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
             condition:
               function: equal
               parameters:
-                - [str1, $(Catalyst)]
-                - [str2, $(Chemicals)]
-      - p: solar:hasChemical
-        o:
-          - mapping: CHEMICAL
-            condition:
-              function: equal
-              parameters:
-                - [str1, $(Catalyst)]
+                - [str1, $(co_catalyst_3)]
                 - [str2, $(Chemicals)]
  
   SUPPORT:
@@ -189,14 +166,13 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(Support), xsd:string]
       - [solar:hasRole, solarpc:Support~iri]
-      - [qudt:floatPercentage, $(support_percent), xsd:float]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
             condition:
               function: equal
               parameters:
-                - [str1, $(Catalyst)]
+                - [str1, $(Support)]
                 - [str2, $(Chemicals)]
  
   DOPANT:
@@ -207,14 +183,13 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(Dopant), xsd:string]
       - [solar:hasRole, solar:Dopant~iri]
-      - [qudt:floatPercentage, $(dopant_percent), xsd:float]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
             condition:
               function: equal
               parameters:
-                - [str1, $(Catalyst)]
+                - [str1, $(Dopant)]
                 - [str2, $(Chemicals)]
  
   DYE:
@@ -225,14 +200,13 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(Dyes), xsd:string]
       - [solar:hasRole, solarpc:Dye~iri]
-      - [qudt:floatPercentage, $(dye_percent), xsd:float]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
             condition:
               function: equal
               parameters:
-                - [str1, $(Catalyst)]
+                - [str1, $(Dyes)]
                 - [str2, $(Chemicals)]
  
   REDUCTANT:
@@ -243,14 +217,13 @@ mappings:
       - [a, solar:Input]
       - [rdfs:label, $(Reductant), xsd:string]
       - [solar:hasRole, solarpc:Reductant~iri]
-      - [solarpc:reductantRatio, $(CO2_H2O_reductant_ratio), xsd:float]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
             condition:
               function: equal
               parameters:
-                - [str1, $(Catalyst)]
+                - [str1, $(Reductant)]
                 - [str2, $(Chemicals)]
  
   PH:
@@ -360,4 +333,204 @@ mappings:
     subjects: $(uri)
     po:
       - [rdfs:label, $(Chemicals), xsd:string]
+ 
+  BANDGAP_OBS:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/$(Catalyst)-bandgap/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of badgap for catalyst $(Catalyst) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:BandGapEnergy~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(Catalyst)-bandgap/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  BANDGAP_RES:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/$(Catalyst)-bandgap/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of badgap observation for catalyst $(Catalyst) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(Eg_eV), xsd:float]
+      - [qudt:unit, unit:EV~iri]
+ 
+  SURFACEAREA_OBS:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/$(Catalyst)-surfacearea/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of BET surface area for catalyst $(Catalyst) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:BETSurfaceArea~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(Catalyst)-surfacearea/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  SURFACEAREA_RES:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/$(Catalyst)-surfacearea/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of BET surface area observation for catalyst $(Catalyst) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(BET_m2_g), xsd:float]
+      - [qudt:unit, unit:M2-PER-GM~iri]
+ 
+  CRYSTAL_OBS:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/$(Catalyst)-crystalphase/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of crystalline phase for catalyst $(Catalyst) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:CrystallinePhase~iri]
+      - [sosa:hasSimpleResult, $(TiO2_crystal_structure), xsd:string]
+      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  PERC_CO-CATALYST_OBS:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/$(Co_catalyst)-cocatalyst/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of percentage of co-catalyst $(Co_catalyst) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Percentage~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(Co_catalyst)-cocatalyst/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(Co_catalyst)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  PERC_CO-CATALYST_RES:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/$(Co_catalyst)-cocatalyst/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of percentage of co-catalyst $(Co_catalyst) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(percent), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
+ 
+  PERC_CO-CATALYST2_OBS:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/$(co_catalyst_2)-cocatalyst/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of percentage of co-catalyst $(co_catalyst_2) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Percentage~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(co_catalyst_2)-cocatalyst/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_2)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  PERC_CO-CATALYST2_RES:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/$(co_catalyst_2)-cocatalyst/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of percentage of co-catalyst $(co_catalyst_2) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(percent_cc_2), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
+ 
+  PERC_CO-CATALYST3_OBS:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/$(co_catalyst_3)-cocatalyst/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of percentage of co-catalyst $(co_catalyst_3) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Percentage~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(co_catalyst_3)-cocatalyst/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_3)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  PERC_CO-CATALYST3_RES:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/$(co_catalyst_3)-cocatalyst/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of percentage of co-catalyst $(co_catalyst_3) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(percent_cc_3), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
+ 
+  PERC_SUPPORT_OBS:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/$(Support)-support/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of percentage of support $(Support) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Percentage~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(Support)-support/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Support/$(ID)-$(Support)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  PERC_SUPPORT_RES:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/$(Support)-support/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of percentage of support $(Support) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(support_percent), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
+ 
+  PERC_DOPANT_OBS:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/$(Dopant)-dopant/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of percentage of dopant $(Dopant) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Percentage~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(Dopant)-dopant/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  PERC_DOPANT_RES:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/$(Dopant)-dopant/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of percentage of dopant $(Dopant) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(dopant_percent), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
+ 
+  PERC_DYE_OBS:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/$(Dyes)-dye/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of percentage of dye $(Dyes) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Percentage~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/$(Dyes)-dye/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  PERC_DYE_RES:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/$(Dyes)-dye/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of percentage of dye $(Dyes) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(dye_percent), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
+ 
+  PERC_REDUCTANT_OBS:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/$(Reductant)-reductant/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CO2 H2O reductant ratio for reductant $(Reductant) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:ReductantRatio~iri]
+      - [sosa:hasSimpleResult, $(CO2_H2O_reductant_ratio), xsd:float]
+      - [sosa:hasFeatureOfInterest, https://w3id.org/solar/i/Input/Reductant/$(ID)-$(Reductant)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
  

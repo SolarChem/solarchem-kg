@@ -17,667 +17,1282 @@ prefixes:
   qudt: "http://qudt.org/2.1/schema/qudt/"
   unit: "http://qudt.org/vocab/unit/"
   obi: "http://purl.obolibrary.org/obo/OBI_"
+  sosa: "http://www.w3.org/ns/sosa/"
 
 mappings:
+  CO2_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CO2_mol_gh/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CO2 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CO2_mol_gh/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q1997~iri]
+ 
   H2_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/H2_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/H2_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, H2, xsd:string]
-      - [qudt:numericValue, $(H2_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of H2 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/H2_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q3027893~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q3027893~iri]
  
   CO_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CO_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/CO_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, CO, xsd:string]
-      - [qudt:numericValue, $(CO_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CO production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CO_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q2025~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q2025~iri]
  
   CH4_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH4_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/CH4_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, CH4, xsd:string]
-      - [qudt:numericValue, $(CH4_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH4 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH4_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q37129~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q37129~iri]
  
   C2H4_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H4_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/C2H4_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H4, xsd:string]
-      - [qudt:numericValue, $(C2H4_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H4 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H4_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151313~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151313~iri]
  
   C2H6_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H6_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/C2H6_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H6, xsd:string]
-      - [qudt:numericValue, $(C2H6_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H6 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H6_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q52858~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q52858~iri]
  
   C3H6_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C3H6_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/C3H6_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, C3H6, xsd:string]
-      - [qudt:numericValue, $(C3H6_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C3H6 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C3H6_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151324~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151324~iri]
  
   C3H8_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C3H8_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/C3H8_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, C3H8, xsd:string]
-      - [qudt:numericValue, $(C3H8_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C3H8 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C3H8_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q131189~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q131189~iri]
  
   C4H8_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C4H8_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/C4H8_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, C4H8, xsd:string]
-      - [qudt:numericValue, $(C4H8_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C4H8 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C4H8_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151335~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151335~iri]
  
   C4H10_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C4H10_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/C4H10_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, C4H10, xsd:string]
-      - [qudt:numericValue, $(C4H10_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C4H10 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C4H10_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q134192~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q134192~iri]
  
   C5H10_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C5H10_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/C5H10_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, C5H10, xsd:string]
-      - [qudt:numericValue, $(C5H10_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C5H10 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C5H10_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151353~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151353~iri]
  
   C5H12_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C5H12_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/C5H12_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, C5H12, xsd:string]
-      - [qudt:numericValue, $(C5H12_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C5H12 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C5H12_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q2799651~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q2799651~iri]
  
   CH3OH_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH3OH_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/CH3OH_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, CH3OH, xsd:string]
-      - [qudt:numericValue, $(CH3OH_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH3OH production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH3OH_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q14982~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q14982~iri]
  
   C2H5OH_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H5OH_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/C2H5OH_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H5OH, xsd:string]
-      - [qudt:numericValue, $(C2H5OH_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H5OH production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H5OH_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q153~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q153~iri]
  
   CH3COH_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH3COH_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/CH3COH_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, CH3COH, xsd:string]
-      - [qudt:numericValue, $(CH3COH_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH3COH production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH3COH_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q61457~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q61457~iri]
  
   HCOOH_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/HCOOH_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/HCOOH_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, HCOOH, xsd:string]
-      - [qudt:numericValue, $(HCOOH_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of HCOOH production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/HCOOH_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q161233~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q161233~iri]
  
   CH2O_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH2O_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/CH2O_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, CH2O, xsd:string]
-      - [qudt:numericValue, $(CH2O_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH2O production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH2O_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q161210~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q161210~iri]
  
   C2H4O2_mol_gh:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H4O2_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/C2H4O2_mol_gh/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H4O2, xsd:string]
-      - [qudt:numericValue, $(C2H4O2_mol_gh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H4O2 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H4O2_mol_gh/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q47512~iri]
- 
-  H2_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/H2_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, H2, xsd:string]
-      - [qudt:numericValue, $(H2_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q3027893~iri]
-      - [solar:selectivityPercentage, $(h2_selectivity_molg), xsd:float]
- 
-  CO_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CO_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, CO, xsd:string]
-      - [qudt:numericValue, $(CO_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q2025~iri]
-      - [solar:selectivityPercentage, $(co_selectivity_molg), xsd:float]
- 
-  CH4_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH4_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, CH4, xsd:string]
-      - [qudt:numericValue, $(CH4_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q37129~iri]
-      - [solar:selectivityPercentage, $(ch4_selectivity_molg), xsd:float]
- 
-  C2H4_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H4_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H4, xsd:string]
-      - [qudt:numericValue, $(C2H4_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151313~iri]
- 
-  C2H6_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H6_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H6, xsd:string]
-      - [qudt:numericValue, $(C2H6_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q52858~iri]
- 
-  C3H6_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C3H6_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C3H6, xsd:string]
-      - [qudt:numericValue, $(C3H6_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151324~iri]
- 
-  C3H8_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C3H8_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C3H8, xsd:string]
-      - [qudt:numericValue, $(C3H8_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q131189~iri]
- 
-  C4H8_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C4H8_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C4H8, xsd:string]
-      - [qudt:numericValue, $(C4H8_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151335~iri]
- 
-  C4H10_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C4H10_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C4H10, xsd:string]
-      - [qudt:numericValue, $(C4H10_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q134192~iri]
- 
-  C5H10_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C5H10_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C5H10, xsd:string]
-      - [qudt:numericValue, $(C5H10_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151353~iri]
- 
-  C5H12_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C5H12_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C5H12, xsd:string]
-      - [qudt:numericValue, $(C5H12_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q2799651~iri]
- 
-  CH3OH_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH3OH_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, CH3OH, xsd:string]
-      - [qudt:numericValue, $(CH3OH_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q14982~iri]
-      - [solar:selectivityPercentage, $(ch3oh_selectivity_molg), xsd:float]
- 
-  C2H5OH_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H5OH_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H5OH, xsd:string]
-      - [qudt:numericValue, $(C2H5OH_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q153~iri]
- 
-  CH3COH_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH3COH_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, CH3COH, xsd:string]
-      - [qudt:numericValue, $(CH3COH_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q61457~iri]
- 
-  HCOOH_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/HCOOH_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, HCOOH, xsd:string]
-      - [qudt:numericValue, $(HCOOH_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q161233~iri]
- 
-  CH2O_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH2O_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, CH2O, xsd:string]
-      - [qudt:numericValue, $(CH2O_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q161210~iri]
- 
-  C2H4O2_mol_g:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H4O2_mol_g/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H4O2, xsd:string]
-      - [qudt:numericValue, $(C2H4O2_mol_g), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q47512~iri]
- 
-  H2_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/H2_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, H2, xsd:string]
-      - [qudt:numericValue, $(H2_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q3027893~iri]
- 
-  CO_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CO_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, CO, xsd:string]
-      - [qudt:numericValue, $(CO_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q2025~iri]
- 
-  CH4_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH4_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, CH4, xsd:string]
-      - [qudt:numericValue, $(CH4_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q37129~iri]
- 
-  C2H4_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H4_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H4, xsd:string]
-      - [qudt:numericValue, $(C2H4_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151313~iri]
- 
-  C2H6_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H6_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H6, xsd:string]
-      - [qudt:numericValue, $(C2H6_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q52858~iri]
- 
-  C3H6_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C3H6_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C3H6, xsd:string]
-      - [qudt:numericValue, $(C3H6_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151324~iri]
- 
-  C3H8_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C3H8_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C3H8, xsd:string]
-      - [qudt:numericValue, $(C3H8_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q131189~iri]
- 
-  C4H8_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C4H8_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C4H8, xsd:string]
-      - [qudt:numericValue, $(C4H8_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151335~iri]
- 
-  C4H10_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C4H10_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C4H10, xsd:string]
-      - [qudt:numericValue, $(C4H10_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q134192~iri]
- 
-  C5H10_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C5H10_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C5H10, xsd:string]
-      - [qudt:numericValue, $(C5H10_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q151353~iri]
- 
-  C5H12_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C5H12_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C5H12, xsd:string]
-      - [qudt:numericValue, $(C5H12_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q2799651~iri]
- 
-  CH3OH_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH3OH_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, CH3OH, xsd:string]
-      - [qudt:numericValue, $(CH3OH_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q14982~iri]
- 
-  C2H5OH_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H5OH_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, C2H5OH, xsd:string]
-      - [qudt:numericValue, $(C2H5OH_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q153~iri]
- 
-  CH3COH_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH3COH_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, CH3COH, xsd:string]
-      - [qudt:numericValue, $(CH3COH_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q61457~iri]
- 
-  HCOOH_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/HCOOH_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [rdfs:label, HCOOH, xsd:string]
-      - [qudt:numericValue, $(HCOOH_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q161233~iri]
- 
-  CH2O_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CH2O_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [a, solar:Output]
-      - [rdfs:label, CH2O, xsd:string]
-      - [rdfs:label, CH2O, xsd:string]
-      - [qudt:numericValue, $(CH2O_mol_m2h), xsd:float]
-      - [qudt:numericValue, $(CH2O_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q161210~iri]
- 
-  C2H4O2_mol_m2h:
-    sources:
-      - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/C2H4O2_mol_m2h/$(ID)
-    po:
-      - [a, solar:Output]
-      - [a, solar:Output]
-      - [rdfs:label, C2H4O2, xsd:string]
-      - [rdfs:label, C2H4O2, xsd:string]
-      - [qudt:numericValue, $(C2H4O2_mol_m2h), xsd:float]
-      - [qudt:numericValue, $(C2H4O2_mol_m2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q47512~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q47512~iri]
  
   CO2_mol_g:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CO2_mol_g/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/CO2_mol_g/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, CO2, xsd:string]
-      - [qudt:numericValue, $(co2_prod_molg), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CO2 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CO2_mol_g/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q1997~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q1997~iri]
  
-  CO2_mol_gh:
+  H2_mol_g:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CO2_mol_gh/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/H2_mol_g/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, CO2, xsd:string]
-      - [qudt:numericValue, $(co2_prod_molgh), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of H2 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/H2_mol_g/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q1998~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q3027893~iri]
+ 
+  CO_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CO_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CO production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CO_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q2025~iri]
+ 
+  CH4_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CH4_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH4 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH4_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q37129~iri]
+ 
+  C2H4_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C2H4_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H4 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H4_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151313~iri]
+ 
+  C2H6_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C2H6_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H6 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H6_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q52858~iri]
+ 
+  C3H6_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C3H6_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C3H6 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C3H6_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151324~iri]
+ 
+  C3H8_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C3H8_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C3H8 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C3H8_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q131189~iri]
+ 
+  C4H8_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C4H8_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C4H8 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C4H8_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151335~iri]
+ 
+  C4H10_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C4H10_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C4H10 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C4H10_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q134192~iri]
+ 
+  C5H10_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C5H10_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C5H10 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C5H10_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151353~iri]
+ 
+  C5H12_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C5H12_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C5H12 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C5H12_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q2799651~iri]
+ 
+  CH3OH_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CH3OH_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH3OH production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH3OH_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q14982~iri]
+ 
+  C2H5OH_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C2H5OH_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H5OH production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H5OH_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q153~iri]
+ 
+  CH3COH_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CH3COH_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH3COH production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH3COH_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q61457~iri]
+ 
+  HCOOH_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/HCOOH_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of HCOOH production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/HCOOH_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q161233~iri]
+ 
+  CH2O_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CH2O_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH2O production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH2O_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q161210~iri]
+ 
+  C2H4O2_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C2H4O2_mol_g/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H4O2 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H4O2_mol_g/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q47512~iri]
  
   CO2_mol_m2h:
     sources:
       - [../data/processed/catalystsdata.csv~csv]
-    subjects: https://w3id.org/solar/i/Output/CO2_mol_m2h/$(ID)
+    subjects: https://w3id.org/solar/i/Observation/CO2_mol_m2h/$(ID)
     po:
-      - [a, solar:Output]
-      - [rdfs:label, CO2, xsd:string]
-      - [qudt:numericValue, $(co2_prod_molm2h), xsd:float]
-      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CO2 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CO2_mol_m2h/$(ID)~iri]
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
-      - [solar:hasChemical, http://www.wikidata.org/entity/Q1999~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q1997~iri]
+ 
+  H2_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/H2_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of H2 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/H2_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q3027893~iri]
+ 
+  CO_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CO_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CO production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CO_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q2025~iri]
+ 
+  CH4_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CH4_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH4 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH4_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q37129~iri]
+ 
+  C2H4_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C2H4_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H4 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H4_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151313~iri]
+ 
+  C2H6_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C2H6_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H6 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H6_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q52858~iri]
+ 
+  C3H6_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C3H6_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C3H6 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C3H6_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151324~iri]
+ 
+  C3H8_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C3H8_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C3H8 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C3H8_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q131189~iri]
+ 
+  C4H8_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C4H8_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C4H8 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C4H8_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151335~iri]
+ 
+  C4H10_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C4H10_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C4H10 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C4H10_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q134192~iri]
+ 
+  C5H10_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C5H10_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C5H10 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C5H10_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q151353~iri]
+ 
+  C5H12_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C5H12_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C5H12 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C5H12_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q2799651~iri]
+ 
+  CH3OH_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CH3OH_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH3OH production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH3OH_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q14982~iri]
+ 
+  C2H5OH_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C2H5OH_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H5OH production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H5OH_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q153~iri]
+ 
+  CH3COH_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CH3COH_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH3COH production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH3COH_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q61457~iri]
+ 
+  HCOOH_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/HCOOH_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of HCOOH production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/HCOOH_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q161233~iri]
+ 
+  CH2O_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CH2O_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH2O production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH2O_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q161210~iri]
+ 
+  C2H4O2_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/C2H4O2_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of C2H4O2 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:Production~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/C2H4O2_mol_m2h/$(ID)~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q47512~iri]
+ 
+  result_CO2_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CO2_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CO2 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(co2_prod_molgh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_H2_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/H2_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of H2 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(H2_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CO_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CO_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CO production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CO_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CH4_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH4_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH4 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH4_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C2H4_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H4_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H4 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H4_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C2H6_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H6_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H6 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H6_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C3H6_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C3H6_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C3H6 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C3H6_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C3H8_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C3H8_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C3H8 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C3H8_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C4H8_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C4H8_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C4H8 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C4H8_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C4H10_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C4H10_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C4H10 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C4H10_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C5H10_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C5H10_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C5H10 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C5H10_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C5H12_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C5H12_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C5H12 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C5H12_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CH3OH_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH3OH_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH3OH production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH3OH_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C2H5OH_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H5OH_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H5OH production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H5OH_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CH3COH_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH3COH_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH3COH production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH3COH_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_HCOOH_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/HCOOH_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of HCOOH production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(HCOOH_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CH2O_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH2O_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH2O production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH2O_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C2H4O2_mol_gh:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H4O2_mol_gh/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H4O2 production (micromol per gram and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H4O2_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CO2_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CO2_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of H2 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(co2_prod_molg), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_H2_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/H2_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CO production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(H2_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_CO_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CO_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH4 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CO_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_CH4_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH4_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H4 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH4_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_C2H4_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H4_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H6 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H4_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_C2H6_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H6_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C3H6 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H6_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_C3H6_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C3H6_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C3H8 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C3H6_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_C3H8_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C3H8_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C4H8 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C3H8_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_C4H8_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C4H8_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C4H10 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C4H8_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_C4H10_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C4H10_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C5H10 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C4H10_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_C5H10_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C5H10_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C5H12 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C5H10_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_C5H12_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C5H12_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH3OH production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C5H12_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_CH3OH_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH3OH_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H5OH production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH3OH_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_C2H5OH_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H5OH_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH3COH production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H5OH_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_CH3COH_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH3COH_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of HCOOH production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH3COH_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_HCOOH_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/HCOOH_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH2O production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(HCOOH_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_CH2O_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH2O_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H4O2 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH2O_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_C2H4O2_mol_g:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H4O2_mol_g/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CO2 production (micromol per gram) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H4O2_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+ 
+  result_CO2_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CO2_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CO2 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(co2_prod_molm2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_H2_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/H2_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of H2 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(H2_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CO_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CO_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CO production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CO_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CH4_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH4_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH4 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH4_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C2H4_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H4_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H4 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H4_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C2H6_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H6_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H6 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H6_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C3H6_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C3H6_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C3H6 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C3H6_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C3H8_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C3H8_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C3H8 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C3H8_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C4H8_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C4H8_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C4H8 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C4H8_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C4H10_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C4H10_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C4H10 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C4H10_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C5H10_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C5H10_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C5H10 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C5H10_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C5H12_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C5H12_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C5H12 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C5H12_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CH3OH_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH3OH_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH3OH production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH3OH_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C2H5OH_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H5OH_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H5OH production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H5OH_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CH3COH_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH3COH_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH3COH production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH3COH_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_HCOOH_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/HCOOH_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of HCOOH production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(HCOOH_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_CH2O_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH2O_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH2O production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(CH2O_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  result_C2H4O2_mol_m2h:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/C2H4O2_mol_m2h/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of C2H4O2 production (micromol per square meter and hour) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(C2H4O2_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+ 
+  H2_selectivity:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/H2_selectivity/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of H2 selectivity percentage for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:SelectivityPercentage~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/H2_selectivity/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q3027893~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CO_selectivity:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CO_selectivity/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CO selectivity percentage for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:SelectivityPercentage~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CO_selectivity/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q2025~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH4_selectivity:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CH4_selectivity/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH4 selectivity percentage for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:SelectivityPercentage~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH4_selectivity/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q37129~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH3OH_selectivity:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Observation/CH3OH_selectivity/$(ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, Observation of CH3OH selectivity percentage for experiment execution $(ID), xsd:string]
+      - [sosa:observedProperty, solar:SelectivityPercentage~iri]
+      - [sosa:hasResult, https://w3id.org/solar/i/Result/CH3OH_selectivity/$(ID)~iri]
+      - [sosa:hasFeatureOfInterest, http://www.wikidata.org/entity/Q14982~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  result_H2_selectivity:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/H2_selectivity/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CO production (percentage) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(h2_selectivity_molg), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
+ 
+  result_CO_selectivity:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CO_selectivity/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CO production (percentage) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(co_selectivity_molg), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
+ 
+  result_CH4_selectivity:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH4_selectivity/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH4 production (percentage) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(ch4_selectivity_molg), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
+ 
+  result_CH3OH_selectivity:
+    sources:
+      - [../data/processed/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Result/CH3OH_selectivity/$(ID)
+    po:
+      - [a, sosa:Result]
+      - [rdfs:label, Result of CH3OH production (percentage) for experiment execution $(ID), xsd:string]
+      - [qudt:numericValue, $(ch3oh_selectivity_molg), xsd:float]
+      - [qudt:unit, unit:PERCENT~iri]
  
