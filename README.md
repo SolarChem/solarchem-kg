@@ -1,5 +1,5 @@
 # solarchem-kg
-Knowledge Graph for he SolarChem ontology with photocatalysis experiments
+Knowledge Graph for he [Solarchem Ontology](https://w3id.org/solar/) with photocatalysis experiments.
 
 ## Description
 
@@ -10,17 +10,18 @@ This repository contains the resources used to build a knowledge graph containin
 This repository is organized as follows:
 * `mappings/` contains the RML mappings needed to construct the knowledge graph from the input data sources.
 * `notebooks/` conains three notebooks, for (i) cleaning the source data, (ii) construct and enrich the knoweldge graph, and (iii) querying the knowledge graph.
+* `server-scripts/` contains the code organized in scripts to execute the cleaning and preparation of data, KG construction and update of ontologies and KG in GraphDB.
 
 ## Installation
 The code in this repository has been tested in `Python 3.9`
 
-In order to run the code, you need to install [Jupyter Notebooks](https://jupyter.org/install)
+In order to run the code, you need to either install [Jupyter Notebooks](https://jupyter.org/install) to test the notebooks, or execute the scripts in `server-scripts/`.
 
 ```
 pip install notebook
 ```
 
-Then, install the requirements of the project. Creating an environment is highly recommended. For installing the extraction requirements, run: 
+The requirements of the project can be installed as follos. Creating an environment is highly recommended. 
 
 ```
 pip install -r requirements.txt

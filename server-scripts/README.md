@@ -2,7 +2,7 @@
 
 ## Contents
 
-Data and scripts needed to produce and update in GraphDB the Solarchem Knowledge Graph. Designed to run in the server to update the data in the triplestore.
+Data and scripts needed to produce and update in GraphDB the Solarchem Knowledge Graph. Designed to run in the server to update the data in the triplestore. The data and access key required to update the data in GraphDB are stored in the server.
 
 The process needs these repositories:
 * `. (server-scripts/)`: contains all the scripts (bash and python) used to extract, transform and load data, each one detailed below.
